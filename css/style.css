@@ -92,6 +92,7 @@ body {
 .main-rating-num {
   margin-left: 9px;
   font-size: 12px;
+  z-index: -1;
 }
 .main-title {
   font-family: "MasonChronicles";
