@@ -1,0 +1,269 @@
+@font-face 
+  font-family: 'MasonChronicles'
+  src: url('../fonts/MasonChronicles.woff') format('woff')
+  src: url('../fonts/MasonChronicles.woff2') format('woff2')
+  font-weight: normal
+  font-style: normal
+body
+    background-color: #141218
+    font-family: 'Roboto'
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    background-image: url("../img/background.jpg")
+    background-repeat: no-repeat
+    background-position: top right
+.container
+    width: 95%
+    max-width: 1140px
+    margin: 0 auto
+
+.header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-top: 60px
+    margin-bottom: 90px
+    &-list
+        margin-right: auto
+        margin-left: 68px
+        &-link
+            text-decoration: none
+            font-size: 14px
+            color: #FFFFFF
+            margin-right: 24px
+    &-social-link
+        margin-left: 20px
+        text-decoration: none
+.main
+    color: #FFFFFF
+    display: flex
+    align-items: center
+    margin-bottom: 85px
+    &-genre
+        display: block
+        font-size: 14px
+        margin-bottom: 16px
+        animation-delay: 0.1s
+    &-rating
+        display: flex
+        align-items: center
+        margin-bottom: 10px
+        animation-delay: 0.3s
+        &-star
+            margin-right: 4px
+        &-num
+            margin-left: 9px
+            font-size: 12px
+    &-title
+        font-family: 'MasonChronicles'
+        font-weight: 500
+        font-size: 76px
+        margin-bottom: 10px
+        animation-delay: 0.5s
+    &-description
+        max-width: 458px
+        font-size: 14px
+        line-height: 150%
+        margin-bottom: 40px
+        animation-delay: 0.7s
+    &-button
+        display: inline-block
+        color: white
+        background: #9D2929
+        border-radius: 8px
+        border: none
+        padding: 22px 72px
+        font-weight: bold
+        font-size: 14px
+        outline: none
+        cursor: pointer
+        text-decoration: none
+        animation-delay: 1s
+        &:active
+            color: #fff
+    &-play
+        background: #9D2929
+        width: 100px
+        height: 100px
+        border-radius: 50%
+        border: none
+        outline: none
+        position: relative
+        margin: auto
+        cursor: pointer 
+        &::before
+            content: ""
+            width: 132px
+            height: 132px
+            background: #9d2929
+            opacity: 0.5
+            position: absolute
+            border-radius: 50%
+            left: -16px
+            top: -16px
+            animation: pulse 0.5s  ease-in-out 2s infinite
+        img
+            position: relative
+            transform: translateX(5px)
+    
+    &-series
+        display: flex
+        align-items: center
+        margin-bottom: 60px
+        position: relative
+        max-width: 420px
+        &-card
+            width: 164px
+            height: 113px
+            border-radius: 8px
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+            text-decoration: none
+            padding: 13px
+            margin-right: 30px
+            color: white
+            &-subtitle
+                font-size: 10px
+                line-height: 12px
+                margin-bottom: 2px
+            &-title
+                font-weight: bold
+                font-size: 14px
+                line-height: 16px
+        @for $i from 1 through 8
+            &-#{$i}
+                background: linear-gradient(180deg, rgba(20, 18, 24, 0.5) 0%, #2D2D2D 100%), url("../img/series/series_#{$i}.jpg")
+                background-repeat: no-repeat
+                background-size: cover
+                background-position: center center
+    &-arrow
+        width: 32px
+        height: 23px
+        border: none
+        background-image: url("../img/arrow.svg")
+        background-color: transparent
+        position: absolute
+        top: 50%
+        right: -35px
+        outline: none
+
+.footer
+    background-color: #141218
+    padding: 20px 0px
+    margin-top: auto
+    &-content
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &-link
+        text-decoration: none
+        color: #3a383d
+        margin-left: 25px
+    &-copyright
+        color: #3a383d
+
+.swiper-container
+    max-width: 420px
+    margin-left: 0px
+
+
+.menu-btn
+    display: none
+@media screen and (max-width: 760px)
+    .main-play
+        display: none
+    .footer
+        &-content
+            flex-direction: column
+            align-items: flex-start
+        &-copyright
+            display: block
+            margin-bottom: 8px
+        &-link:first-child
+            margin-left: 0px
+        
+@media screen and (max-width: 540px)
+    .menu-btn
+        display: block
+        position: absolute
+        right: 35px
+        top: 40px
+        width: 30px
+        height: 2px
+        background-color: #fff
+        border: none
+        z-index: 11
+    .menu-btn:before
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        right: 0
+        width: 30px
+        height: 2px
+        background-color: #fff
+        transition: transform 0.2s
+        margin-top: -7px
+    .menu-btn:after
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        right: 0
+        width: 30px
+        height: 2px
+        background-color: #fff
+        transition: transform 0.2s
+        margin-top: 7px
+    .menu-btn-active
+        height: 0
+        &::before
+            transform: rotate(45deg)
+            margin-top: 0
+        &::after
+            transform: rotate(-45deg)
+            margin-top: 0
+    .header
+        display: none
+        flex-direction: column
+        width: 250px
+        position: absolute
+        right: 0
+        top: 0
+        background-color: #9d2929
+        margin-bottom: 40px
+        &-active
+            display: flex
+        &-list
+            margin: auto
+            order: 2
+            display: flex
+            flex-direction: column
+            align-items: center
+            &-link
+                margin-right: 0
+                margin-bottom: 17px
+        &-social
+            order: 1
+            margin-top: 25px
+            margin-bottom: 22px
+            &-link:first-child
+                margin-left: 0
+    .swiper-container
+        max-width: 220px
+    .main
+        &-content
+            margin-top: 196px
+        &-title
+            font-size: 56px
+        &-series
+            width: 80%
+    body
+        background-position: top center
+
+
+
+    

@@ -1,0 +1,252 @@
+body
+    background-color: #141218
+    font-family: 'Roboto'
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    background-image: url("../img/background.jpg")
+    background-repeat: no-repeat
+    background-position: top right
+
+.header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-top: 60px
+    margin-bottom: 90px
+    &-list
+        margin-right: auto
+        margin-left: 68px
+        &-link
+            text-decoration: none
+            font-size: 14px
+            color: #FFFFFF
+            margin-right: 24px
+    &-social-link
+        margin-left: 20px
+        text-decoration: none
+.test
+    text-align: center
+    padding: 0
+
+.main
+    &-bg
+        background-color: rgba(20, 18, 24, 0.7)
+        min-height: 100px
+        border-radius: 5px
+    &-all
+        background: linear-gradient(180deg, rgba(20, 18, 24, 0.5) 10%, #2D2D2D 100%), lighten(#141218,3)
+        display: inline-block
+        padding: 20px 30px
+        text-decoration: none
+        color: white
+        font-size: 18px
+        margin-top: 30px
+        border-radius: 7px
+        &-series
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-around
+    &-series
+        margin-bottom: 30px
+        &-card
+            border-radius: 8px
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+            margin-right: 10px
+            padding: 13px
+            color: white
+            margin: auto
+            margin-top: 20px
+            text-decoration: none
+            &-subtitle
+                font-size: 10px
+                line-height: 12px
+                margin-bottom: 2px
+            &-title
+                font-weight: bold
+                font-size: 14px
+                line-height: 16px
+        @for $i from 1 through 8
+            &-#{$i}
+                background: linear-gradient(180deg, rgba(20, 18, 24, 0.5) 0%, #2D2D2D 100%), url("../img/series/series_#{$i}.jpg")
+                background-repeat: no-repeat
+                background-size: cover
+                background-position: center center
+    &-button
+        background: linear-gradient(180deg, rgba(20, 18, 24, 0.5) 10%, #2D2D2D 100%), lighten(#141218,3)
+        color: white
+        display: inline-block
+        padding: 20px 0px
+        text-decoration: none
+        font-size: 14px
+        width: 32%
+        border-radius: 7px
+    &-title
+        text-align: left
+        margin-left: 20px
+        color: #C0C0C0
+    &-subtitle
+        text-align: left
+        margin-left: 20px
+        color: #C0C0C0
+        font-size: 22px
+            
+.footer
+    background-color: #141218
+    padding: 20px 0px
+    margin-top: auto
+    &-content
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &-link
+        text-decoration: none
+        color: #3a383d
+        margin-left: 20px
+    &-copyright
+        color: #3a383d
+@media (min-width: 576px) 
+    iframe
+        width: 360px
+        height: 200px
+    .main-button
+        font-size: 13px 
+    .main-series-card
+        width: 192px
+        height: 108px
+    .main-all
+        width: 192px
+  
+
+
+@media (min-width: 768px) 
+    iframe
+        width: 480px
+        height: 270px
+    .main-button
+        font-size: 15px
+    .main-series-card
+        width: 240px
+        height: 135px
+        flex-basis: 40%
+    .main-all
+        width: 240px
+  
+
+
+@media (min-width: 992px) 
+    iframe
+        width: 640px
+        height: 360px
+    .main-series-card
+        width: 256px
+        height: 144px
+        flex-basis: auto
+        margin-bottom: 30px
+    .main-all
+        width: 256px
+
+@media (min-width: 1200px) 
+    iframe
+        width: 737.5px
+        height: 413px
+    .main-series-card
+        width: 288px
+        height: 162px
+
+    .main-all
+        width: 288px
+
+  
+@media screen and (max-width: 576px)
+    main
+        margin-top: 60px
+    
+    .menu-btn
+        display: block
+        position: absolute
+        right: 35px
+        top: 40px
+        width: 30px
+        height: 2px
+        background-color: #fff
+        border: none
+        z-index: 11
+    .menu-btn:before
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        right: 0
+        width: 30px
+        height: 2px
+        background-color: #fff
+        transition: transform 0.2s
+        margin-top: -7px
+    .menu-btn:after
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        right: 0
+        width: 30px
+        height: 2px
+        background-color: #fff
+        transition: transform 0.2s
+        margin-top: 7px
+    .menu-btn-active
+        height: 0
+        &::before
+            transform: rotate(45deg)
+            margin-top: 0
+        &::after
+            transform: rotate(-45deg)
+            margin-top: 0
+    .header
+        z-index: 10 
+        display: none
+        flex-direction: column
+        width: 250px
+        position: absolute
+        right: 0
+        top: 0
+        background-color: #9d2929
+        margin-bottom: 40px
+        &-active
+            display: flex
+        &-list
+            margin: auto
+            order: 2
+            display: flex
+            flex-direction: column
+            align-items: center
+            &-link
+                margin-right: 0
+                margin-bottom: 17px
+        &-social
+            order: 1
+            margin-top: 25px
+            margin-bottom: 22px
+            &-link:first-child
+                margin-left: 0
+    .main-series
+        &-card-title
+            font-size: 11px
+        &-subtitle
+            font-size: 12px
+    .main-series-card
+        width: 192px
+        height: 108px
+@media screen and (max-width: 760px)
+    .footer
+        &-content
+            flex-direction: column
+            align-items: flex-start
+        &-copyright
+            display: block
+            margin-bottom: 8px
+        &-link:first-child
+            margin-left: 0px
